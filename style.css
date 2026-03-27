@@ -1,0 +1,194 @@
+:root {
+    /* --color-black: #333; */
+    /* --color-white: #eee; */
+    /* --color-gray: #aaa; */
+    /* --color-midd: #888; */
+    /* --color-link: #33a; */
+
+    --color-black: #333231;
+    --color-white: #e5e0dd;
+    --color-gray: #a4a19c;
+    --color-midd: #858280;
+    --color-link: #33a;
+}
+
+html {
+    height: 100%;
+    color: var(--color-black);
+
+    font-family: cursive;
+    font-size: 24px;
+}
+
+body {
+    margin: 0;
+    height: 100%;
+
+    background: linear-gradient(180deg, var(--color-white) 80%, var(--color-gray) 115%);
+    /* background-color: var(--color-white); */
+}
+
+main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+
+    height: 100%;
+    max-width: 1200px;
+
+    margin: 0 auto;
+}
+
+#hexagram-borad {
+    grid-column: 1 / 2;
+    grid-row: 1 / 3;
+
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+
+    /* gap: 1%; */
+    gap: 1vw;
+}
+
+
+.hexagram {
+    width: 33vw;
+    max-width: 400px;
+    aspect-ratio: 6 / 1;
+
+    background-color: var(--color-black);
+    border: none;
+    padding: 0;
+}
+
+.hexagram[data-negtive] {
+    background: linear-gradient(90deg, var(--color-black) 0% 45%, transparent 45% 55%, var(--color-black) 55% 100%);
+}
+
+.hexagram:focus {
+    outline: none;
+}
+
+/* .hexagram::before, */
+.hexagram:focus::before,
+.hexagram:hover::before {
+    content: "";
+    display: block;
+    position: relative;
+    top: 0;
+    left: 0;
+    /* width: 45%; */
+    height: 100%;
+    box-shadow: 0px 0px 16px 0px var(--color-black);
+}
+
+/* .hexagram[data-negtive]::before, */
+.hexagram[data-negtive]:focus::before,
+.hexagram[data-negtive]:hover::before {
+    content: "";
+    display: block;
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 45%;
+    height: 100%;
+    box-shadow: 0px 0px 16px 0px var(--color-black);
+}
+
+/* .hexagram[data-negtive]::after, */
+.hexagram[data-negtive]:focus::after,
+.hexagram[data-negtive]:hover::after {
+    content: "";
+    display: block;
+    position: relative;
+    top: -100%;
+    left: 55%;
+    width: 45%;
+    height: 100%;
+    box-shadow: 0px 0px 16px 0px var(--color-black);
+}
+
+/* ================ */
+
+#explain,
+#website {
+    width: 20rem;
+    margin: 0 auto;
+}
+
+#website {
+    align-content: end;
+}
+
+#hexagram-name {}
+
+.explain-text {}
+
+.list-block {
+    padding: 0;
+}
+
+.explain-list {
+    list-style-type: none;
+}
+
+.small-title {
+    display: inline-block;
+    width: 3rem;
+
+    font-size: calc(1rem - 4px);
+    font-weight: bold;
+    color: var(--color-midd);
+}
+
+.website-link {
+    display: inline-block;
+
+    font-size: calc(1rem - 4px);
+    font-weight: bold;
+    color: var(--color-link);
+
+    text-decoration: none;
+}
+
+.website-link:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 1000px) {
+    html {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 750px) {
+    main {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+
+        padding-top: 1rem;
+        gap: 1rem;
+        height: auto;
+    }
+}
+
+@media (max-width: 700px) {
+    html {
+        font-size: 18px;
+    }
+
+    .hexagram {
+        width: 45vw;
+    }
+}
+
+@media (max-width: 380px) {
+    html {
+        font-size: 16px;
+    }
+
+}
